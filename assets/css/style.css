@@ -22,6 +22,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  user-select: none;
 }
 
 html {
@@ -115,7 +116,7 @@ body.dark-theme {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 99999;
 }
 
 .nav {
@@ -338,10 +339,70 @@ body.dark-theme {
 }
 
 .project_container {
+  width: 100%;
+  height: calc(460px + 2.625rem);
+
+  overflow: hidden;
+
   padding-top: 2.625rem;
+
+  position: relative;
+
+  transition: 0.5s all;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  
   gap: 23px;
+}
+
+#project_readmore {
+  width: 150px;
+  height: 40px;
+
+  position: absolute;
+
+  z-index: 100;
+  top: calc(100% - 45px);
+  right: 18px;
+
+  background: #555555;
+  opacity: 0.6;
+  color: white;
+
+  text-align: center;
+  line-height: 40px;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+}
+
+.project_slide_btn {
+  /* width: inherit; */
+  width: 1200px;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: space-between;
+
+  top: 50%;
+  z-index: 100;
+  padding: 0 20px;
+
+  cursor: pointer;
+
+}
+.project_slide_btn > div {
+  width: 28px;
+  height: 28px;
+
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project_img_text {
@@ -355,6 +416,8 @@ body.dark-theme {
 
 .project_img {
   padding: 1.5625rem 1.5625rem 0.625rem;
+  width: 322px !important;
+  height: 322px !important;
 }
 
 .project_icon {

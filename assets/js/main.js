@@ -94,3 +94,21 @@ function scrollUp() {
   else scrollUp.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollUp);
+
+var project_readmore = document.getElementById("project_readmore");
+var project_container = document.getElementById("project_container");
+var project_container_height = project_container.offsetHeight;
+var project_toggle = false;
+
+project_readmore.addEventListener("click", readMore)
+
+function readMore () {
+  if (project_toggle) {
+    project_container.style.height = project_container_height + "px";
+    project_readmore.innerText = "자세히보기"
+  } else {
+    project_container.style.height = 100 + "%";
+    project_readmore.innerText = "간략히"
+  }
+  project_toggle = !project_toggle;
+}
